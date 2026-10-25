@@ -1,6 +1,15 @@
-<header class="navbar">
+<header class="navbar" id="site-navbar">
   <a class="brand" href="#beranda" aria-label="PERSADA, kembali ke beranda">
-    LOGO
+    <img
+      class="logo logo-light"
+      src="/images/logo-persada-light.png"
+      alt="Logo PERSADA"
+    />
+    <img
+      class="logo logo-dark"
+      src="/images/logo-persada-dark.png"
+      alt="Logo PERSADA"
+    />
   </a>
 
   <nav class="desktop-nav" aria-label="Navigasi utama">
@@ -27,25 +36,42 @@
 
 <style>
   .navbar {
-    position: absolute;
-    inset: 0 0 auto;
-    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    max-width: 1440px;
     height: 92px;
     padding: 0 8.3%;
-    margin-inline: auto;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition:
+      background-color 250ms ease,
+      box-shadow 250ms ease,
+      border-color 250ms ease;
   }
 
   .brand {
-    color: #fff;
-    font-size: 28px;
-    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
     text-decoration: none;
-    letter-spacing: -0.8px;
+  }
+
+  .brand .logo {
+    display: block;
+    width: 200px;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    transition: opacity 200ms ease;
+  }
+
+  .logo-dark {
+    display: none !important;
   }
 
   .desktop-nav {
@@ -58,12 +84,13 @@
   .desktop-nav a {
     color: #fff;
     font-size: 14px;
+    font-weight: 500;
     text-decoration: none;
-    transition: opacity 180ms ease;
+    transition: color 250ms ease;
   }
 
   .desktop-nav a:hover {
-    opacity: 0.55;
+    opacity: 0.65;
   }
 
   .mobile-nav {
@@ -90,7 +117,8 @@
   .mobile-nav summary span {
     width: 22px;
     height: 2px;
-    background: #111;
+    background: #fff;
+    transition: background-color 250ms ease;
   }
 
   .mobile-nav nav {
@@ -99,24 +127,47 @@
     right: 0;
     display: grid;
     gap: 4px;
-    width: 200px;
+    width: 210px;
     padding: 12px;
     border: 1px solid #e5e5e5;
     border-radius: 12px;
-    background: white;
+    background: #fff;
     box-shadow: 0 12px 32px rgb(0 0 0 / 8%);
   }
 
   .mobile-nav nav a {
     padding: 12px;
+    border-radius: 6px;
     color: #111;
     font-size: 14px;
     text-decoration: none;
-    border-radius: 6px;
   }
 
   .mobile-nav nav a:hover {
     background: #f1f1f1;
+  }
+
+  .navbar.scrolled {
+    background: rgb(255 255 255 / 97%);
+    border-bottom-color: #eeeeee;
+    box-shadow: 0 4px 24px rgb(0 0 0 / 5%);
+    backdrop-filter: blur(14px);
+  }
+
+  .navbar.scrolled .logo-light {
+    display: none !important;
+  }
+
+  .navbar.scrolled .logo-dark {
+    display: block !important;
+  }
+
+  .navbar.scrolled .desktop-nav a {
+    color: #111;
+  }
+
+  .navbar.scrolled .mobile-nav summary span {
+    background: #111;
   }
 
   @media (max-width: 640px) {
@@ -125,8 +176,9 @@
       padding-inline: 6%;
     }
 
-    .brand {
-      font-size: 24px;
+    .brand .logo {
+      width: 100px;
+      max-height: 48px;
     }
 
     .desktop-nav {
@@ -137,4 +189,29 @@
       display: block;
     }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .navbar,
+    .brand .logo,
+    .desktop-nav a,
+    .mobile-nav summary span {
+      transition: none;
+    }
+  }
 </style>
+
+<script>
+  const navbar = document.querySelector("#site-navbar");
+
+  if (navbar) {
+    const updateNavbar = () => {
+      navbar.classList.toggle("scrolled", window.scrollY > 40);
+    };
+
+    updateNavbar();
+
+    window.addEventListener("scroll", updateNavbar, {
+      passive: true,
+    });
+  }
+</script>
