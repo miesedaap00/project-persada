@@ -1,0 +1,142 @@
+---
+const events = [
+  {
+    name: "Nama Program",
+    date: "Waktu/Tanggal",
+    status: "Akan Datang",
+  },
+  {
+    name: "Nama Program",
+    date: "Waktu/Tanggal",
+    status: "Akan Datang",
+  },
+];
+---
+
+<section class="upcoming-section" id="agenda">
+  <div class="upcoming-container">
+    <h2>Agenda Mendatang</h2>
+
+    <div class="upcoming-grid">
+      {events.map((event) => (
+        <article class="card event-card">
+          <div class="event-image">
+            <span aria-hidden="true">?</span>
+            <span class="badge event-badge">{event.status}</span>
+          </div>
+
+          <div class="event-info">
+            <h3>{event.name}</h3>
+            <p>{event.date}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .upcoming-section {
+    padding: 46px 8.3% 110px;
+    background: #fff;
+  }
+
+  .upcoming-container {
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  .upcoming-container > h2 {
+    margin: 0 0 24px;
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+  }
+
+  .upcoming-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    max-width: 780px;
+    margin-inline: auto;
+  }
+
+  .event-card {
+    overflow: hidden;
+    border: 0;
+    border-radius: 16px;
+    background: #e7e7e7;
+    box-shadow: none;
+  }
+
+  .event-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1.6 / 1;
+    background: #d9d9d9;
+  }
+
+  .event-image > span:first-child {
+    color: #929292;
+    font-size: 68px;
+    line-height: 1;
+    font-weight: 800;
+  }
+
+  .event-badge {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    min-height: 20px;
+    height: 20px;
+    padding-inline: 10px;
+    border: none;
+    border-radius: 20px;
+    background: #fff;
+    color: #111;
+    font-size: 8px;
+    font-weight: 600;
+  }
+
+  .event-info {
+    padding: 10px 12px 12px;
+  }
+
+  .event-info h3 {
+    margin: 0 0 2px;
+    font-size: 11px;
+    line-height: 1.4;
+    font-weight: 800;
+  }
+
+  .event-info p {
+    margin: 0;
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 640px) {
+    .upcoming-section {
+      padding: 56px 6% 80px;
+    }
+
+    .upcoming-container > h2 {
+      margin-bottom: 26px;
+      font-size: 26px;
+    }
+
+    .upcoming-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 420px;
+    }
+
+    .event-image {
+      aspect-ratio: 1.6 / 1;
+    }
+  }
+</style>

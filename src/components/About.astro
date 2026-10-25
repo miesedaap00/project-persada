@@ -1,0 +1,93 @@
+<section class="about-section" id="tentang">
+  <div class="about-container">
+    <div class="about-copy">
+      <h2>Persada</h2>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra
+        non eros vel luctus. Phasellus in massa in neque ultricies ultricies.
+        Aenean mauris orci, ullamcorper eu
+      </p>
+
+      <p>
+        ante sit amet, iaculis accumsan augue. Morbi mollis lorem nec commodo
+        commodo. Phasellus pulvinar ultricies nibh eu volutpat. Donec vestibulum
+        pellentesque erat ac pretium.
+      </p>
+    </div>
+
+    <div class="about-image" role="img" aria-label="Placeholder logo PERSADA">
+      <span>LOGO</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    padding: 110px 8.3%;
+    background: #fff;
+  }
+
+  .about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 9%;
+    max-width: 1120px;
+    margin-inline: auto;
+  }
+
+  .about-copy h2 {
+    margin: 0 0 5px;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+  }
+
+  .about-copy p {
+    margin: 0 0 14px;
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .about-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .about-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 1.57 / 1;
+    background: #d9d9d9;
+  }
+
+  .about-image span {
+    color: #929292;
+    font-size: clamp(48px, 7vw, 72px);
+    font-weight: 800;
+    letter-spacing: -2px;
+  }
+
+  @media (max-width: 640px) {
+    .about-section {
+      padding: 72px 6%;
+    }
+
+    .about-container {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .about-copy h2 {
+      font-size: 27px;
+    }
+
+    .about-image {
+      max-width: 480px;
+      aspect-ratio: 1.57 / 1;
+    }
+  }
+</style>

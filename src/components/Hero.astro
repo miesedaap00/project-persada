@@ -1,0 +1,217 @@
+<section class="hero-section" id="beranda">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1>
+      TUMBUH BERSAMA,<br />
+      BERGERAK UNTUK RW 12
+    </h1>
+
+    <p>
+      PERSADA adalah komunitas anak muda RW 12 yang hadir untuk membangun
+      kebersamaan, mengembangkan potensi, dan menciptakan dampak positif
+      bagi lingkungan.
+    </p>
+
+    <a class="btn hero-button" href="#tentang">
+      Lihat Detail
+      <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+
+  <a class="scroll-indicator" href="#tentang">
+    <span class="scroll-icon" aria-hidden="true">↓</span>
+    <span>Scroll untuk mengenal PERSADA</span>
+  </a>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    padding: 130px 4.2% 120px;
+    background-color: #777;
+    background-image: url("/images/hero-persada.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgb(0 0 0 / 58%) 0%,
+      rgb(0 0 0 / 35%) 48%,
+      rgb(0 0 0 / 15%) 100%
+    );
+  }
+
+  .hero-content {
+    width: min(100%, 850px);
+    margin-top: 12px;
+  }
+
+  .hero-content h1 {
+    max-width: 850px;
+    margin: 0 0 24px;
+    font-size: clamp(38px, 5.1vw, 72px);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -2px;
+  }
+
+  .hero-content p {
+    max-width: 510px;
+    margin: 0 0 28px;
+    font-size: clamp(15px, 1.2vw, 18px);
+    line-height: 1.7;
+    color: rgb(255 255 255 / 90%);
+  }
+
+  .hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 48px;
+    height: auto;
+    padding: 6px 7px 6px 22px;
+    border: 1px solid rgb(255 255 255 / 65%);
+    border-radius: 999px;
+    background: rgb(255 255 255 / 12%);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: none;
+    box-shadow: none;
+    backdrop-filter: blur(10px);
+  }
+
+  .hero-button span {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border-radius: 50%;
+    background: #fff;
+    color: #111;
+    font-size: 22px;
+    transition:
+      transform 180ms ease,
+      background 180ms ease;
+  }
+
+  .hero-button:hover {
+    border-color: #fff;
+    background: rgb(255 255 255 / 22%);
+    color: #fff;
+  }
+
+  .hero-button:hover span {
+    transform: translate(2px, -2px);
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    right: 4.2%;
+    bottom: 34px;
+    left: 4.2%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: fit-content;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .scroll-icon {
+    display: grid;
+    width: 52px;
+    height: 52px;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 80%);
+    border-radius: 50%;
+    font-size: 28px;
+    font-weight: 400;
+    transition:
+      background 180ms ease,
+      transform 180ms ease;
+  }
+
+  .scroll-indicator:hover .scroll-icon {
+    transform: translateY(3px);
+    background: rgb(255 255 255 / 15%);
+  }
+
+  @media (min-width: 1440px) {
+    .hero-section {
+      padding-right: max(4.2%, calc((100vw - 1600px) / 2));
+      padding-left: max(4.2%, calc((100vw - 1600px) / 2));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-section {
+      min-height: 100svh;
+      padding: 120px 6% 120px;
+      background-position: 58% center;
+    }
+
+    .hero-overlay {
+      background: linear-gradient(
+        90deg,
+        rgb(0 0 0 / 65%) 0%,
+        rgb(0 0 0 / 40%) 100%
+      );
+    }
+
+    .hero-content {
+      margin-top: 0;
+    }
+
+    .hero-content h1 {
+      margin-bottom: 18px;
+      font-size: clamp(36px, 9vw, 52px);
+      line-height: 1.12;
+      letter-spacing: -1.2px;
+    }
+
+    .hero-content p {
+      max-width: 400px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .scroll-indicator {
+      right: 6%;
+      bottom: 24px;
+      left: 6%;
+      gap: 10px;
+      font-size: 11px;
+    }
+
+    .scroll-icon {
+      width: 44px;
+      height: 44px;
+      font-size: 24px;
+    }
+  }
+
+  @media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+      min-height: 560px;
+    }
+  }
+</style>

@@ -1,0 +1,140 @@
+<header class="navbar">
+  <a class="brand" href="#beranda" aria-label="PERSADA, kembali ke beranda">
+    LOGO
+  </a>
+
+  <nav class="desktop-nav" aria-label="Navigasi utama">
+    <a href="#beranda">Beranda</a>
+    <a href="#tentang">Tentang Kami</a>
+    <a href="#kegiatan">Kegiatan</a>
+  </nav>
+
+  <details class="mobile-nav">
+    <summary aria-label="Buka menu navigasi">
+      <span></span>
+      <span></span>
+      <span></span>
+    </summary>
+
+    <nav aria-label="Navigasi mobile">
+      <a href="#beranda">Beranda</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#kegiatan">Kegiatan</a>
+      <a href="#agenda">Agenda Mendatang</a>
+    </nav>
+  </details>
+</header>
+
+<style>
+  .navbar {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+    height: 92px;
+    padding: 0 8.3%;
+    margin-inline: auto;
+  }
+
+  .brand {
+    color: #fff;
+    font-size: 28px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -0.8px;
+  }
+
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 44px;
+    margin-right: 16%;
+  }
+
+  .desktop-nav a {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    transition: opacity 180ms ease;
+  }
+
+  .desktop-nav a:hover {
+    opacity: 0.55;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: relative;
+  }
+
+  .mobile-nav summary {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .mobile-nav summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-nav summary span {
+    width: 22px;
+    height: 2px;
+    background: #111;
+  }
+
+  .mobile-nav nav {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    display: grid;
+    gap: 4px;
+    width: 200px;
+    padding: 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 12px 32px rgb(0 0 0 / 8%);
+  }
+
+  .mobile-nav nav a {
+    padding: 12px;
+    color: #111;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 6px;
+  }
+
+  .mobile-nav nav a:hover {
+    background: #f1f1f1;
+  }
+
+  @media (max-width: 640px) {
+    .navbar {
+      height: 76px;
+      padding-inline: 6%;
+    }
+
+    .brand {
+      font-size: 24px;
+    }
+
+    .desktop-nav {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: block;
+    }
+  }
+</style>

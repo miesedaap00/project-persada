@@ -1,0 +1,169 @@
+---
+const programs = [
+  {
+    name: "Nama Program",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra non eros vel",
+  },
+  {
+    name: "Nama Program",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra non eros vel",
+  },
+  {
+    name: "Nama Program",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra non eros vel",
+  },
+  {
+    name: "Nama Program",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra non eros vel",
+  },
+];
+---
+
+<section class="programs-section" id="kegiatan">
+  <div class="programs-container">
+    <div class="programs-copy">
+      <h2>Program &amp; Kegiatan Rutin</h2>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in
+        massa in neque ultricies ultricies. Aenean mauris orci, ullamcorper eu
+      </p>
+
+      <p>
+        ante sit amet, iaculis accumsan augue. Morbi mollis lorem nec commodo
+        commodo. Phasellus pulvinar ultricies nibh eu volutpat. Donec vestibulum
+        pellentesque erat ac pretium.
+      </p>
+    </div>
+
+    <div class="program-grid">
+      {programs.map((program, index) => (
+        <article class="program-card">
+          <div
+            class="program-image"
+            role="img"
+            aria-label={`Placeholder gambar ${program.name} ${index + 1}`}
+          ></div>
+
+          <h3>{program.name}</h3>
+          <p>{program.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .programs-section {
+    padding: 74px 8.3%;
+    background: #e7e7e7;
+  }
+
+  .programs-container {
+    display: grid;
+    grid-template-columns: 1fr 1.12fr;
+    align-items: center;
+    gap: 8%;
+    max-width: 1120px;
+    margin-inline: auto;
+  }
+
+  .programs-copy h2 {
+    max-width: 350px;
+    margin: 0 0 22px;
+    font-size: 28px;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+  }
+
+  .programs-copy p {
+    margin: 0 0 14px;
+    font-size: 14px;
+    line-height: 1.35;
+  }
+
+  .programs-copy p:last-child {
+    margin-bottom: 0;
+  }
+
+  .program-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 12px;
+    row-gap: 18px;
+  }
+
+  .program-card {
+    min-width: 0;
+  }
+
+  .program-image {
+    width: 100%;
+    aspect-ratio: 1.2 / 1;
+    background:
+      linear-gradient(
+        145deg,
+        transparent calc(50% - 1px),
+        #111 calc(50% - 1px),
+        #111 calc(50% + 1px),
+        transparent calc(50% + 1px)
+      ),
+      linear-gradient(
+        35deg,
+        transparent calc(50% - 1px),
+        #111 calc(50% - 1px),
+        #111 calc(50% + 1px),
+        transparent calc(50% + 1px)
+      ),
+      #d9d9d9;
+  }
+
+  .program-card h3 {
+    margin: 6px 0 3px;
+    font-size: 11px;
+    line-height: 1.3;
+    font-weight: 800;
+  }
+
+  .program-card p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  @media (max-width: 760px) {
+    .programs-section {
+      padding: 72px 6%;
+    }
+
+    .programs-container {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .programs-copy h2 {
+      max-width: 400px;
+      font-size: 27px;
+    }
+
+    .program-grid {
+      gap: 20px 12px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .program-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .program-image {
+      aspect-ratio: 1.5 / 1;
+    }
+  }
+</style>
